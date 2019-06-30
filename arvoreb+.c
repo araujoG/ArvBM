@@ -136,21 +136,7 @@ void remove(TABM* arvore, int mat, int t){
         a->filho[i+1] = removeCaso1(a->filho[i+1],mat);
         return;
     }
-    else
-        for(i = 0; i<a->nchaves; i++){
-            if(a->chave[i] == mat){
-                if(a->filho[i]->nchaves>=t){ //caso 2
-                    int j = a->filho[i]->nchaves - 1;
-                    removeCaso1(a->filho[i], j);
-                    a->chave[i] = j;
-                    //remover mat do vetor filho[i+1]
-                    for(int k = a->filho[1+i]->nchaves; k >0; k--){
-                        a->filho[i+1]->chave[k] = a->filho[i+1]->chave[k - 1];
-                    }
-                } 
-                
-            }
-        }
+    
     return NULL;
 }
 
